@@ -14,12 +14,12 @@ First, you need to install npm to use gulp.js and other plugins which I used.
 
 Secondly, you have to start the git.
 
-    ```sh
-    git init  
-    git add .
-    git commit -m "first commit"
-    branch -M master
-    ```
+  ```sh
+  git init  
+  git add .
+  git commit -m "first commit"
+  branch -M master
+  ```
     
 
 Git has been installed succesfully and you need to push it to cloud.
