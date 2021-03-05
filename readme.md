@@ -24,6 +24,9 @@ Secondly, you have to start the git.
 
 Git has been installed succesfully and you need to push it to cloud.
 
-## git remote add origin https://github.com/aknEvrnky/[directory].git
+```sh
+git remote add origin https://github.com/aknEvrnky/[directory].git
+git push -M master
+```
 
-## git push -M master
+
