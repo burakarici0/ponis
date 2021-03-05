@@ -6,11 +6,7 @@ First, you need to install npm to use gulp.js and other plugins which I used.
   npm install
   ```
 
-<<<<<<< HEAD
 * gulp
-=======
- * gulp
->>>>>>> 578ea6f12f593345297bf173d9a1c1cc9cc3d6f3
 
     ```sh
     gulp
@@ -34,3 +30,11 @@ git push -M master
 ```
 
 
+node_modules/
+package-lock.json
+main.css
+.vscode/
+
+gulpfile.js
+npm-shrinkwrap.json
+package.json
