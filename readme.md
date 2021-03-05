@@ -28,13 +28,3 @@ Secondly, you have to start the git.
 git remote add origin https://github.com/aknEvrnky/[directory].git
 git push -M master
 ```
-
-
-node_modules/
-package-lock.json
-main.css
-.vscode/
-
-gulpfile.js
-npm-shrinkwrap.json
-package.json
