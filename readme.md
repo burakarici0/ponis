@@ -15,18 +15,9 @@ First, you need to install npm to use gulp.js and other plugins which I used.
 Secondly, you have to start the git.
 
     ```sh
-    git init
-    ```
-    
-    ```sh
+    git init  
     git add .
-    ```
-    
-    ```sh
     git commit -m "first commit"
-    ```
-    
-    ```sh
     branch -M master
     ```
     
