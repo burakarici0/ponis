@@ -6,11 +6,11 @@ First, you need to install npm to use gulp.js and other plugins which I used.
   npm install
   ```
 
-  * gulp
+* gulp
 
-  ```sh
-  gulp
-  ```
+    ```sh
+    gulp
+    ```
 
 Secondly, you have to start the git.
 ## git init
