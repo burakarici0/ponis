@@ -1,3 +1,5 @@
-<?php include 'includes/global/_header.php'; ?>
+<?php include 'includes/header.php'; ?>
 
-<?php include 'includes/global/_footer.php'; ?>
+
+
+<?php include 'includes/footer.php'; ?>

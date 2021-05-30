@@ -6,27 +6,31 @@ const plumber = require('gulp-plumber')
 const reload = browserSync.reload
 const php = require('gulp-connect-php');
 
-gulp.task('browser-sync', function () {
-  php.server({}, function (){
-    browserSync.init({
-      proxy: '127.0.0.1:8000'
-    });
-  });
-  
+function watchFiles() {
   gulp.watch('./*.html').on('change', reload)
   gulp.watch('./*.php').on('change', reload)
+  // gulp.watch('./*.php').on('add', reload)
   gulp.watch('./includes/**/*.php').on('change', reload)
-  gulp.watch('./js/*.js').on('change', reload)
-  gulp.watch('./scss/**/*.scss', ['css'])
-})
+  gulp.watch('./front/js/*.js').on('change', reload)
+  gulp.watch('./front/scss/**/*.scss', gulp.series(css))
+}
 
-gulp.task('css', () => {
-  return gulp.src('./scss/main.scss')
-  .pipe(plumber([{errorHandler: false}]))
-  .pipe(sass())
-  .pipe(prefix())
-  .pipe(gulp.dest('./css/'))
-  .pipe(browserSync.stream())
-})
+function browser_sync() {
+  php.server({}, function (){
+    browserSync.init({
+      proxy: '127.0.0.1:3000'
+    });
+  });
+}
 
-gulp.task('default', ['browser-sync', 'css'])
+function css() {
+  return gulp.src('./front/scss/main.scss')
+      .pipe(plumber([{errorHandler: false}]))
+      .pipe(sass())
+      .pipe(prefix())
+      .pipe(gulp.dest('./front/css/'))
+      .pipe(browserSync.stream())
+}
+
+
+exports.default = gulp.parallel(gulp.parallel(browser_sync, watchFiles), css);

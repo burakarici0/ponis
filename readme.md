@@ -1,30 +1,10 @@
-First, you need to install npm to use gulp.js and other plugins which I used.
-
-* npm
+package.json dosyamızın içinde tanımlı olan gerekli paketlerle beraber node modullerimizi kuruyoruz
 
   ```sh
   npm install
   ```
 
-* gulp
-
-    ```sh
-    gulp
-    ```
-
-Secondly, you have to start the git.
-
+Daha sonra, gulpımızı başlatıyoruz.
   ```sh
-  git init  
-  git add .
-  git commit -m "first commit"
-  branch -M master
+  gulp
   ```
-    
-
-## Git has been installed succesfully and you need to push it to cloud.
-
-```sh
-git remote add origin https://github.com/aknEvrnky/[directory].git
-git push -M master
-```

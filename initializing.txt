@@ -1,3 +1,0 @@
-npm install
-git init
-git add .
