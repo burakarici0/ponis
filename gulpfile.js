@@ -27,7 +27,7 @@ function css() {
   return gulp.src('./front/scss/main.scss')
       .pipe(plumber([{errorHandler: false}]))
       .pipe(sass())
-      .pipe(prefix())
+      .pipe(prefix('last 2 versions'))
       .pipe(gulp.dest('./front/css/'))
       .pipe(browserSync.stream())
 }
