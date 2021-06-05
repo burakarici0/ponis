@@ -6,14 +6,7 @@ const plumber = require('gulp-plumber')
 const reload = browserSync.reload
 const php = require('gulp-connect-php');
 
-function watchFiles() {
-  gulp.watch('./*.html').on('change', reload)
-  gulp.watch('./*.php').on('change', reload)
-  // gulp.watch('./*.php').on('add', reload)
-  gulp.watch('./includes/**/*.php').on('change', reload)
-  gulp.watch('./front/js/*.js').on('change', reload)
-  gulp.watch('./front/scss/**/*.scss', gulp.series(css))
-}
+
 
 function browser_sync() {
   php.server({}, function (){
@@ -21,6 +14,15 @@ function browser_sync() {
       proxy: '127.0.0.1:8000'
     });
   });
+}
+
+function watchFiles() {
+  gulp.watch('./*.html').on('change', reload)
+  gulp.watch('./*.php').on('change', reload)
+  // gulp.watch('./*.php').on('add', reload)
+  gulp.watch('./includes/**/*.php').on('change', reload)
+  gulp.watch('./front/js/*.js').on('change', reload)
+  gulp.watch('./front/scss/**/*.scss', gulp.series(css))
 }
 
 function css() {
@@ -32,5 +34,6 @@ function css() {
       .pipe(browserSync.stream())
 }
 
+const browser = gulp.parallel(browser_sync, watchFiles);
 
-exports.default = gulp.parallel(gulp.parallel(browser_sync, watchFiles), css);
+exports.default = gulp.parallel(browser, css);
