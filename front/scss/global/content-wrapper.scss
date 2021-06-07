@@ -1,5 +1,7 @@
 .content-wrapper {
 
+    line-height: 1.6;
+
     &::before, &::after {
         content: "";
         clear: both;
